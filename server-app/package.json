@@ -1,0 +1,25 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "A backend app to work with a todo app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./node_modules/typescript/bin/tsc && npm run copy && node dist/app.js",
+    "copy": "cp package.json dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "eslint": "7.25.0",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^8.6.8",
+    "pg": "^8.6.0"
+  }
+}
