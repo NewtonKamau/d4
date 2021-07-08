@@ -51,6 +51,8 @@ export default {
   comments: {},
   data: () => ({
     todoList: [],
+     search: null,
+    searched :[],
   }),
   created() {
     this.fetchList();

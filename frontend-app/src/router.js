@@ -32,7 +32,7 @@ const routes = [
     name: "home",
     component: Home,
     meta: {
-      // authRequired: true,
+      //authRequired: true,
     },
   },
 ];

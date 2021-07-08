@@ -19,7 +19,7 @@
           <md-input placeholder="Search by name..." v-model="search" @input="searchOnTable" />
         </md-field>
       </md-table-toolbar>
-     
+    
 
 
       <!-- todo list -->
@@ -31,7 +31,6 @@
     </div>
     <!-- <Todo/> -->
 
-    <router-view></router-view>
   </div>
 </template>
 
@@ -40,9 +39,12 @@ import NewTodo from "./NewTodo.vue";
 import TodoList from "./TodoList.vue";
 import firebase from "firebase";
 
+const toLower = text => {
+    return text.toString().toLowerCase()
+  }
   const searchByName = (TodoList, term) => {
     if (term) {
-      return TodoList.fetchList().filter(item => toLower(item.name).includes(toLower(term)))
+      return TodoList.fetchList.filter(item => toLower(item).includes(toLower(term)))
     }
 
     return TodoList
@@ -68,7 +70,8 @@ export default {
       this.currentTodo = e;
     },
     searchOnTable () {
-        this.searched = searchByName(this.TodoList, this.search)
+        this.searched = searchByName(this.fetchList, this.search)
+        console.log(this.searched);
       },
     logout() {
       firebase
